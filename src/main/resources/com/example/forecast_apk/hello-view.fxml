@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox prefHeight="200.0" prefWidth="338.0" fx:controller="com.example.forecast_apk.HelloController" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ForeCast App developed by BipulBimali Using ............API" textAlignment="CENTER" wrappingWidth="313.638671875" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
+      <ChoiceBox fx:id="location" prefWidth="150.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wind" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ll" />
+      <Button mnemonicParsing="false" text="Forecast" textAlignment="CENTER" />
+   </children>
+</VBox>
