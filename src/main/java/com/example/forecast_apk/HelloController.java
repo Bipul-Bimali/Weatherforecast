@@ -18,8 +18,10 @@ public class HelloController implements Initializable {
     @FXML
     private ChoiceBox <String> location;
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    void magic() {
+        API a = new API();
+        a.connection();
+
     }
     private void getCoordinate(String Location){
         switch (Location)
