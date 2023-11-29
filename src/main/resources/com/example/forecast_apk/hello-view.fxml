@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 
 <VBox prefHeight="400.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forecast_apk.HelloController">
    <children>
@@ -27,8 +27,6 @@
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,27 +34,22 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Label" />
-                  <Label text="Label" GridPane.columnIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="2" />
-                  <Label text="Label" GridPane.columnIndex="3" />
-                  <Label text="Label" GridPane.columnIndex="4" />
-                  <Label text="Label" GridPane.columnIndex="5" />
-                  <Label text="Label" GridPane.columnIndex="6" />
-                  <Label text="Label" GridPane.columnIndex="7" />
-                  <Label text="Label" GridPane.columnIndex="8" />
-                  <Label text="Label" GridPane.columnIndex="9" />
-                  <Label text="Label" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="46.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                  <Label text="03" />
+                  <Label text="06" GridPane.columnIndex="1" />
+                  <Label text="09" GridPane.columnIndex="2" />
+                  <Label text="12" GridPane.columnIndex="3" />
+                  <Label text="15" GridPane.columnIndex="4" />
+                  <Label text="18" GridPane.columnIndex="5" />
+                  <Label text="21" GridPane.columnIndex="6" />
+                  <Label text="24" GridPane.columnIndex="7" />
+                  <Label fx:id="a1" text="Label" GridPane.rowIndex="1" />
+                  <Label fx:id="a2" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="a3" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="a4" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label fx:id="a5" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Label fx:id="a6" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label fx:id="a7" text="Label" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Label fx:id="a8" text="Label" GridPane.columnIndex="7" GridPane.rowIndex="1" />
                   <ImageView fitHeight="46.0" fitWidth="61.0" layoutX="10.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <ImageView fitHeight="46.0" fitWidth="61.0" layoutX="70.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <ImageView fitHeight="46.0" fitWidth="61.0" layoutX="131.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
@@ -64,7 +57,6 @@
                   <ImageView fitHeight="46.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                   <ImageView fitHeight="46.0" fitWidth="61.0" layoutX="314.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2" />
                   <ImageView fitHeight="46.0" fitWidth="61.0" layoutX="314.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <ImageView fitHeight="46.0" fitWidth="61.0" layoutX="314.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="2" />
                </children>
             </GridPane>
       </children>

@@ -14,7 +14,15 @@ public class API {
     int timepoint;
     String[ ] Dataseries;
     String[ ]  Timepoint={"a","b","c","d","e","f","g","h"};
-//    String[ ]  a;
+    forecastData a = new forecastData();
+    forecastData b = new forecastData();
+    forecastData c = new forecastData();
+    forecastData d = new forecastData();
+    forecastData e = new forecastData();
+    forecastData f = new forecastData();
+    forecastData g = new forecastData();
+    forecastData h = new forecastData();
+    //    String[ ]  a;
 //    String[ ]  b;
 //    String[ ]  c;
 //    String[ ]  d;
@@ -22,7 +30,7 @@ public class API {
 //    String[ ]  f;
 //    String[ ]  g;
 //    String[ ]  h;
-    public void connection() {
+    public String[ ] connection() {
         try {
             URL url = new URL(host);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -31,36 +39,30 @@ public class API {
             System.out.println(conn.getContentType());
             int responseCode = conn.getResponseCode();
             System.out.println(responseCode);
-            if (responseCode != 200) {
-                System.out.println("ERROR: " + responseCode);
-                return;
-            }
+//            if (responseCode != 200) {
+//                System.out.println("ERROR: " + responseCode);
+//                return;
+//            }
             StringBuilder builder = new StringBuilder();
             Scanner scanner = new Scanner(url.openStream());
             while (scanner.hasNext()) {
                 builder.append(scanner.nextLine());
             }
             scanner.close();
-            JSONSeperation(builder);
+            return JSONSeperation(builder);
         } catch (Exception e) {
             System.out.println("Error: " + e);
-
+            String[ ] a = {"a","b"};
+            return a ;
         }
     }
-    private void JSONSeperation(StringBuilder builder){
+    private String[ ] JSONSeperation(StringBuilder builder){
+
 
         String str = builder+"";
 //        System.out.println(builder);
         JsonObject obj = JsonParser.parseString(str).getAsJsonObject();
         JsonArray  dataseries = obj.get("dataseries").getAsJsonArray();
-        forecastData a = new forecastData();
-        forecastData b = new forecastData();
-        forecastData c = new forecastData();
-        forecastData d = new forecastData();
-        forecastData e = new forecastData();
-        forecastData f = new forecastData();
-        forecastData g = new forecastData();
-        forecastData h = new forecastData();
         for (JsonElement dataset: dataseries ) {
             JsonObject data = JsonParser.parseString(dataset + "").getAsJsonObject();
             String produc = data.get("timepoint").getAsString();
@@ -68,7 +70,7 @@ public class API {
 //            System.out.println("Product: " + produc);
             timepoint = data.get("timepoint").getAsInt();
             String r = data.get("prec_type").getAsString();
-            System.out.println(timepoint);
+//            System.out.println(timepoint);
 
             switch (timepoint){
                 case 3:{
@@ -175,6 +177,10 @@ public class API {
             }
 
         }
-        System.out.println("YHIS"+a.getWindDir()+b.getWindDir()+c.getWindDir());
+//        System.out.println("YHIS"+a.getWindDir()+b.getWindDir()+c.getWindDir());
+        String[ ] temperature_list = {a.returnTEMP(),b.returnTEMP(), c.returnTEMP(), d.returnTEMP(), e.returnTEMP(), f.returnTEMP(),g.returnTEMP(),h.returnTEMP()};
+
+        return temperature_list;
     }
+
 }

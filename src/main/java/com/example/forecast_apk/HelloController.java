@@ -1,10 +1,15 @@
 package com.example.forecast_apk;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ChoiceBox;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,13 +19,59 @@ public class HelloController implements Initializable {
     private double Y;
     @FXML
     private Label welcomeText;
+    @FXML
+    private Label a1;
+
+    @FXML
+    private Label a2;
+
+    @FXML
+    private Label a3;
+
+    @FXML
+    private Label a4;
+
+    @FXML
+    private Label a5;
+
+    @FXML
+    private Label a6;
+
+    @FXML
+    private Label a7;
+
+    @FXML
+    private Label a8;
 
     @FXML
     private ChoiceBox <String> location;
     @FXML
+    void details(){
+try {
+    Parent root = FXMLLoader.load(getClass().getResource("detailed_view.fxml"));
+    Stage newStage = new Stage();
+    newStage.setTitle("Detailed View");
+    newStage.setScene(new Scene(root));
+    newStage.show();
+}
+catch (IOException e){
+    System.out.println(e);
+}
+    }
+    @FXML
     void magic() {
+//        a1.setText("agd");
         API a = new API();
-        a.connection();
+        String[ ] values = a.connection();
+        a1.setText(values[0]);
+        a2.setText(values[1]);
+        a3.setText(values[2]);
+        a4.setText(values[3]);
+        a5.setText(values[4]);
+        a6.setText(values[5]);
+        a7.setText(values[6]);
+        a8.setText(values[7]);
+        details();
 
     }
     private void getCoordinate(String Location){
