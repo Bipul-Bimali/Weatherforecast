@@ -10,10 +10,12 @@ import com.google.gson.JsonParser;
 
 @SuppressWarnings("ALL")
 public class API {
-    String host = "https://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json";
+    double lon;
+    double lat;
+    String host;
     int timepoint;
-    String[ ] Dataseries;
-    String[ ]  Timepoint={"a","b","c","d","e","f","g","h"};
+    //    String[ ] Dataseries;
+    //    String[ ]  Timepoint={"a","b","c","d","e","f","g","h"};
     forecastData a = new forecastData();
     forecastData b = new forecastData();
     forecastData c = new forecastData();
@@ -22,16 +24,14 @@ public class API {
     forecastData f = new forecastData();
     forecastData g = new forecastData();
     forecastData h = new forecastData();
-    //    String[ ]  a;
-//    String[ ]  b;
-//    String[ ]  c;
-//    String[ ]  d;
-//    String[ ]  e;
-//    String[ ]  f;
-//    String[ ]  g;
-//    String[ ]  h;
+    public API(double lat,double lon){
+        this.lat = lat;
+        this.lon = lon;
+
+    }
     public String[ ] connection() {
         try {
+            host = "https://www.7timer.info/bin/api.pl?lon="+lon+"&lat="+lat+"&product=astro&output=json";
             URL url = new URL(host);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
@@ -60,7 +60,6 @@ public class API {
 
 
         String str = builder+"";
-//        System.out.println(builder);
         JsonObject obj = JsonParser.parseString(str).getAsJsonObject();
         JsonArray  dataseries = obj.get("dataseries").getAsJsonArray();
         for (JsonElement dataset: dataseries ) {
