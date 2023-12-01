@@ -9,13 +9,20 @@ public class forecastData {
     private int windSpeed;
     private int temp2m;
     private String prec;
+    //cONVERTED DATA
     private String CLOUDCOVER = "ERRORA";
     private String SEEING = "ERRORA";
-    private String HUMIDITY ="ERRORA";
-    private String SPEED ="ERRORA";
+    private String TRANSPARENCY ="ERRORA";
+    private String LIFTED_INDEX ="ERRORA";
+    private String TEMPERATURE = temp2m+"";
+    private String HUMIDITY = "ERRORA";
+    private String WIND_DIRECTION = "ERRORA";
+    private String WIND_SPEED ="ERRORA";
+    private final String PREC_TYPE ="ERRORA";
     public forecastData(){
 
     }
+    //getters
     public int getSeeing() {
         return seeing;
     }
@@ -43,6 +50,8 @@ public class forecastData {
     public String getWindDir() {
         return windDir;
     }
+
+    //Setters
     public void setCloudcover(int cloudcover) {
         Cloudcover = cloudcover;
     }
@@ -55,6 +64,7 @@ public class forecastData {
     public void setRh2m(int rh2m) {
         this.rh2m = rh2m;
     }
+    public void settemp2m(int temp2m){this.temp2m = temp2m;}
     public void setSeeing(int seeing) {
         this.seeing = seeing;
     }
@@ -73,6 +83,7 @@ public class forecastData {
     }
 
     public void Conversion(){
+        //cloudcover determination
         switch (Cloudcover){
             case (1):{
                 CLOUDCOVER = "0-6";
@@ -113,6 +124,7 @@ public class forecastData {
                 CLOUDCOVER="ERROR";
             }
         }
+        //seeing determination
         switch (seeing){
             case (1):{
                 SEEING= "<0.5";
@@ -148,11 +160,8 @@ public class forecastData {
             default:{
                 SEEING="ERROR";
             }
-//            case (9):{
-//                CLOUDCOVER = "94-100";
-//                break;
-//            }
         }
+        //humidity determination
         switch (rh2m){
             case (-4):{
                 HUMIDITY = "0-5";
@@ -240,53 +249,76 @@ public class forecastData {
                 HUMIDITY="ERROR";
             }
         }
+        //windspeed determination
         switch (windSpeed){
             case (1):{
-                SPEED= "calm";
+                WIND_SPEED= "calm";
                 break;
             }
             case (2):{
-                SPEED= "light";
+                WIND_SPEED= "light";
             }
             case (3):{
-                SPEED = "moderate";
+                WIND_SPEED = "moderate";
                 break;
             }
             case (4):{
-                SPEED= "fresh";
+                WIND_SPEED= "fresh";
                 break;
             }
             case (5):{
-                SPEED= "strong";
+                WIND_SPEED= "strong";
                 break;
             }
             case (6):{
-                SPEED = "gale";
+                WIND_SPEED = "gale";
                 break;
             }
             case (7):{
-                SPEED= "strom";
+                WIND_SPEED= "strom";
                 break;
             }
             case (8):{
-                SPEED = "hurricane";
+                WIND_SPEED = "hurricane";
                 break;
             }
             default:{
-                SPEED = "ERROR";
+                WIND_SPEED = "ERROR";
             }
-//            case (9):{
-//                CLOUDCOVER = "94-100";
-//                break;
-//            }
         }
+        //Lifted index determination
+
     }
-    public String returnTEMP(){
-        return windSpeed+"";
+    public String return_cloud_cover(){
+        return CLOUDCOVER+"";
+    }
+    public String return_seeing(){
+        return SEEING+"";
+    }
+    public String return_transparency(){
+        return TRANSPARENCY+"";
+    }
+    public String return_lifted_index(){
+        return LIFTED_INDEX+"";
+    }
+    public String return_temperature(){
+        return TEMPERATURE+"";
+    }
+    public String return_humidity() {
+        return HUMIDITY+"";
+    }
+    public String return_wind_direction(){
+        return WIND_DIRECTION+"";
+    }
+    public String return_wind_speed(){
+        return WIND_SPEED+"";
+    }
+    public String return_prec_type(){
+        return PREC_TYPE+"";
     }
     public String[ ] returning(){
         Conversion();
-        String [ ] rame = {CLOUDCOVER,SEEING,transparency+"",liftedIndex+"",temp2m+"",HUMIDITY,windDir,SPEED,prec};
+        String [ ] rame = {CLOUDCOVER,SEEING,transparency+"",liftedIndex+"",temp2m+"",HUMIDITY,windDir,WIND_SPEED,prec};
 
         return rame;
     }

@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 public class HelloController implements Initializable {
     private final String[ ] list = {"Amsterdam, Netherlands","Ankara, Turkey","Ã…storp, Sweden","Athens, Greece","Belfast, Northern Ireland","Barcelona, Spain","Berlin, Germany","Bern, Switzerland","Bilbao, Spain","Brussels, Belgium","Bucharest, Romania","Budapest, Hungary","Cardiff, Wales","Cologne, Germany","Copenhagen, Denmark","Cork, Ireland","Dublin, Ireland","Edinburgh, Scotland","Florence, Italy","Frankfurt, Germany","French Riviera, France","Funchal, Portugual","Gibraltar, ","Gothenburg, Sweden","Hamburg, Germany","Helsinki, Finland","Ibiza, Spain","Kyiv, Ukraine","Lillehammer, Norway","Lisbon, Portugual","London, England","Madrid, Spain","Mallorca, Spain","Manchester, England ","Marseille, France","Maspalomas, Spain","Milan, Italy","Munich, Germany","Naples, Italy","OÃ±ati, Spain","Oslo, Norway","Paris, France","Prague, Czech Republic","ReykjavÃ­k, Iceland","Riga, Latvia","Rome, Italy","Santa Cruz das Flores, Portugual","Santa Cruz de Tenerife, Spain","Skye, Scotland","Sofia, Bulgaria","Stockholm, Sweden","Tallinn, Estonia","Vienna, Austria","Warsaw, Poland","York, England","Zurich, Switzerland"};
     private String locationValue;
+    API a;
     private double X;
     private double Y;
 
@@ -47,6 +48,29 @@ public class HelloController implements Initializable {
 
     @FXML
     private Label a8;
+    @FXML
+    private Label c1;
+
+    @FXML
+    private Label c2;
+
+    @FXML
+    private Label c3;
+
+    @FXML
+    private Label c4;
+
+    @FXML
+    private Label c5;
+
+    @FXML
+    private Label c6;
+
+    @FXML
+    private Label c7;
+
+    @FXML
+    private Label c8;
 
     @FXML
     private ChoiceBox <String> location;
@@ -69,17 +93,28 @@ catch (IOException e){
         locationValue =location.getValue();
         System.out.println(locationValue);
         getCoordinate(locationValue);
-        API a = new API(X,Y);
-        String[ ] values = a.connection();
-        a1.setText(values[0]+"C");
-        a2.setText(values[1]+"C");
-        a3.setText(values[2]+"C");
-        a4.setText(values[3]+"C");
-        a5.setText(values[4]+"C");
-        a6.setText(values[5]+"C");
-        a7.setText(values[6]+"C");
-        a8.setText(values[7]+"C");
-        details();
+        a = new API(X,Y);
+        a.connection();
+        String[ ] tem = a.get_temperature();
+        String[ ] speed = a.get_wind_speed();
+
+        a1.setText(tem[0]+"C");
+        a2.setText(tem[1]+"C");
+        a3.setText(tem[2]+"C");
+        a4.setText(tem[3]+"C");
+        a5.setText(tem[4]+"C");
+        a6.setText(tem[5]+"C");
+        a7.setText(tem[6]+"C");
+        a8.setText(tem[7]+"C");
+        c1.setText(speed[0]+"C");
+        c2.setText(speed[1]+"C");
+        c3.setText(speed[2]+"C");
+        c4.setText(speed[3]+"C");
+        c5.setText(speed[4]+"C");
+        c6.setText(speed[5]+"C");
+        c7.setText(speed[6]+"C");
+        c8.setText(speed[7]+"C");
+//        details();
 
     }
     private void getCoordinate(String Location){
@@ -375,6 +410,9 @@ catch (IOException e){
     @Override
     public void initialize(URL arg, ResourceBundle arg1){
         location.getItems().addAll(list);
+
+        API a = new API(X,Y);
+        a.checkconnection();
 //        getCoordinate(locationValue);
     }
 }
