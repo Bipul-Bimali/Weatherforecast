@@ -12,13 +12,13 @@ public class forecastData {
     //cONVERTED DATA
     private String CLOUDCOVER = "ERRORA";
     private String SEEING = "ERRORA";
-    private String TRANSPARENCY ="ERRORA";
-    private String LIFTED_INDEX ="ERRORA";
-    private String TEMPERATURE = temp2m+"";
+    private  String TRANSPARENCY ="ERRORA";
+    private  String LIFTED_INDEX ="ERRORA";
+    private  String TEMPERATURE = "ERRORA";
     private String HUMIDITY = "ERRORA";
-    private String WIND_DIRECTION = "ERRORA";
+    private  String WIND_DIRECTION = "ERRORA";
     private String WIND_SPEED ="ERRORA";
-    private final String PREC_TYPE ="ERRORA";
+    private  String PREC_TYPE ="ERRORA";
     public forecastData(){
 
     }
@@ -30,6 +30,7 @@ public class forecastData {
         return Cloudcover;
     }
     public int getTemp2m() {
+        System.out.println(this.temp2m + "hehe");
         return temp2m;
     }
     public int getLiftedIndex() {
@@ -64,12 +65,13 @@ public class forecastData {
     public void setRh2m(int rh2m) {
         this.rh2m = rh2m;
     }
-    public void settemp2m(int temp2m){this.temp2m = temp2m;}
+//    public void settemp2m(int temp2m){this.temp2m = temp2m;}
     public void setSeeing(int seeing) {
         this.seeing = seeing;
     }
     public void setTemp2m(int temp2m) {
         this.temp2m = temp2m;
+        System.out.println("here  :  "+temp2m+"\nAND : "+this.temp2m);
     }
     public void setTransparency(int transparency) {
         this.transparency = transparency;
@@ -287,39 +289,42 @@ public class forecastData {
             }
         }
         //Lifted index determination
+        //TEMPERATURE
+        TEMPERATURE =temp2m+"";
 
     }
     public String return_cloud_cover(){
-        return CLOUDCOVER+"";
+        return CLOUDCOVER;
     }
     public String return_seeing(){
-        return SEEING+"";
+        return SEEING;
     }
     public String return_transparency(){
-        return TRANSPARENCY+"";
+        return TRANSPARENCY;
     }
     public String return_lifted_index(){
-        return LIFTED_INDEX+"";
+        return LIFTED_INDEX;
     }
     public String return_temperature(){
-        return TEMPERATURE+"";
+        System.out.println("temp :  "+TEMPERATURE+"and stemp = "+temp2m);
+        return TEMPERATURE;
     }
     public String return_humidity() {
-        return HUMIDITY+"";
+        return HUMIDITY;
     }
     public String return_wind_direction(){
-        return WIND_DIRECTION+"";
+        return WIND_DIRECTION;
     }
     public String return_wind_speed(){
-        return WIND_SPEED+"";
+        return WIND_SPEED;
     }
     public String return_prec_type(){
-        return PREC_TYPE+"";
+        return PREC_TYPE;
     }
-    public String[ ] returning(){
-        Conversion();
-        String [ ] rame = {CLOUDCOVER,SEEING,transparency+"",liftedIndex+"",temp2m+"",HUMIDITY,windDir,WIND_SPEED,prec};
-
-        return rame;
-    }
+//    public String[ ] returning(){
+//        Conversion();
+//        String [ ] rame = {CLOUDCOVER,SEEING,transparency+"",liftedIndex+"",temp2m+"",HUMIDITY,windDir,WIND_SPEED,prec};
+//
+//        return rame;
+//    }
 }

@@ -43,6 +43,8 @@ public class API {
     public void connection() {
         try {
             host = "https://www.7timer.info/bin/api.pl?lon="+lon+"&lat="+lat+"&product=astro&output=json";
+//            Used for debugging
+//            host ="https://www.7timer.info/bin/astro.php?lon=113.2&lat=23.1&ac=0&unit=metric&output=json&tzshift=0";
             url = new URL(host);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
@@ -93,7 +95,8 @@ public class API {
                     a.setSeeing(data.get("seeing").getAsInt());
                     a.setTransparency(data.get("transparency").getAsInt());
                     a.setLiftedIndex(data.get("lifted_index").getAsInt());
-                    a.settemp2m(data.get("temp2m").getAsInt());
+                    a.setTemp2m(data.get("temp2m").getAsInt());
+//                    System.out.println(data.get("temp2m").getAsInt());
                     a.setRh2m(data.get("rh2m").getAsInt());
                     a.setWindDir(wind.get("direction").getAsString());
                     a.setWindSpeed(wind.get("speed").getAsInt());
@@ -107,7 +110,7 @@ public class API {
                    b.setCloudcover(data.get("timepoint").getAsInt());
                    b.setSeeing(data.get("seeing").getAsInt());
                    b.setTransparency(data.get("transparency").getAsInt());
-                   b.settemp2m(data.get("temp2m").getAsInt());
+                   b.setTemp2m(data.get("temp2m").getAsInt());
                    b.setLiftedIndex(data.get("lifted_index").getAsInt());
                    b.setRh2m(data.get("rh2m").getAsInt());
                    b.setWindDir(wind.get("direction").getAsString());
@@ -122,7 +125,7 @@ public class API {
                     c.setCloudcover(data.get("timepoint").getAsInt());
                     c.setSeeing(data.get("seeing").getAsInt());
                     c.setTransparency(data.get("transparency").getAsInt());
-                    c.settemp2m(data.get("temp2m").getAsInt());
+                    c.setTemp2m(data.get("temp2m").getAsInt());
                     c.setLiftedIndex(data.get("lifted_index").getAsInt());
                     c.setRh2m(data.get("rh2m").getAsInt());
                     c.setWindDir(wind.get("direction").getAsString());
@@ -137,7 +140,7 @@ public class API {
                     d.setCloudcover(data.get("timepoint").getAsInt());
                     d.setSeeing(data.get("seeing").getAsInt());
                     d.setTransparency(data.get("transparency").getAsInt());
-                    d.settemp2m(data.get("temp2m").getAsInt());;
+                    d.setTemp2m(data.get("temp2m").getAsInt());;
                     d.setLiftedIndex(data.get("lifted_index").getAsInt());
                     d.setRh2m(data.get("rh2m").getAsInt());
                     d.setWindDir(wind.get("direction").getAsString());
@@ -153,7 +156,7 @@ public class API {
                     e.setSeeing(data.get("seeing").getAsInt());
                     e.setTransparency(data.get("transparency").getAsInt());
                     e.setLiftedIndex(data.get("lifted_index").getAsInt());
-                    e.settemp2m(data.get("temp2m").getAsInt());
+                    e.setTemp2m(data.get("temp2m").getAsInt());
                     e.setRh2m(data.get("rh2m").getAsInt());
                     e.setWindDir(wind.get("direction").getAsString());
                     e.setWindSpeed(wind.get("speed").getAsInt());
@@ -168,7 +171,7 @@ public class API {
                     f.setSeeing(data.get("seeing").getAsInt());
                     f.setTransparency(data.get("transparency").getAsInt());
                     f.setLiftedIndex(data.get("lifted_index").getAsInt());
-                    f.settemp2m(data.get("temp2m").getAsInt());;
+                    f.setTemp2m(data.get("temp2m").getAsInt());;
                     f.setRh2m(data.get("rh2m").getAsInt());
                     f.setWindDir(wind.get("direction").getAsString());
                     f.setWindSpeed(wind.get("speed").getAsInt());
@@ -183,7 +186,7 @@ public class API {
                     g.setSeeing(data.get("seeing").getAsInt());
                     g.setTransparency(data.get("transparency").getAsInt());
                     g.setLiftedIndex(data.get("lifted_index").getAsInt());
-                    g.settemp2m(data.get("temp2m").getAsInt());
+                    g.setTemp2m(data.get("temp2m").getAsInt());
                     g.setRh2m(data.get("rh2m").getAsInt());
                     g.setWindDir(wind.get("direction").getAsString());
                     g.setWindSpeed(wind.get("speed").getAsInt());
@@ -198,7 +201,7 @@ public class API {
                     h.setSeeing(data.get("seeing").getAsInt());
                     h.setTransparency(data.get("transparency").getAsInt());
                     h.setLiftedIndex(data.get("lifted_index").getAsInt());
-                    h.settemp2m(data.get("temp2m").getAsInt());
+                    h.setTemp2m(data.get("temp2m").getAsInt());
                     h.setRh2m(data.get("rh2m").getAsInt());
                     h.setWindDir(wind.get("direction").getAsString());
                     h.setWindSpeed(wind.get("speed").getAsInt());

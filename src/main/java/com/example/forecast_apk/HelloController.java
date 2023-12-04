@@ -21,57 +21,46 @@ public class HelloController implements Initializable {
     private double Y;
 
     @FXML
-    private Label date;
+    private Label Current_date_time;
+    @FXML
+    private Label precipitation;
 
+    @FXML
+    private Label humidity;
     @FXML
     private Label time;
     @FXML
     private Label a1;
-
     @FXML
     private Label a2;
-
     @FXML
     private Label a3;
-
     @FXML
     private Label a4;
-
     @FXML
     private Label a5;
-
     @FXML
     private Label a6;
-
     @FXML
     private Label a7;
-
     @FXML
     private Label a8;
     @FXML
     private Label c1;
-
     @FXML
     private Label c2;
-
     @FXML
     private Label c3;
-
     @FXML
     private Label c4;
-
     @FXML
     private Label c5;
-
     @FXML
     private Label c6;
-
     @FXML
     private Label c7;
-
     @FXML
     private Label c8;
-
     @FXML
     private ChoiceBox <String> location;
     @FXML
@@ -106,14 +95,14 @@ catch (IOException e){
         a6.setText(tem[5]+"C");
         a7.setText(tem[6]+"C");
         a8.setText(tem[7]+"C");
-        c1.setText(speed[0]+"C");
-        c2.setText(speed[1]+"C");
-        c3.setText(speed[2]+"C");
-        c4.setText(speed[3]+"C");
-        c5.setText(speed[4]+"C");
-        c6.setText(speed[5]+"C");
-        c7.setText(speed[6]+"C");
-        c8.setText(speed[7]+"C");
+        c1.setText(speed[0]);
+        c2.setText(speed[1]);
+        c3.setText(speed[2]);
+        c4.setText(speed[3]);
+        c5.setText(speed[4]);
+        c6.setText(speed[5]);
+        c7.setText(speed[6]);
+        c8.setText(speed[7]);
 //        details();
 
     }

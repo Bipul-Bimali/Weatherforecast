@@ -64,9 +64,9 @@
                   <Label fx:id="c8" text="Label" GridPane.columnIndex="8" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <Label fx:id="time" layoutX="69.0" layoutY="233.0" text="Label" />
-            <Label layoutX="69.0" layoutY="260.0" text="Label" />
-            <Label fx:id="date" layoutX="69.0" layoutY="206.0" text="Label" />
+            <Label fx:id="precipitation" layoutX="69.0" layoutY="233.0" text="Label" />
+            <Label fx:id="humidity" layoutX="69.0" layoutY="260.0" text="Label" />
+            <Label fx:id="Current_date_time" layoutX="69.0" layoutY="206.0" text="Label" />
             <ImageView fitHeight="142.0" fitWidth="196.0" layoutX="365.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icons/clear.png" />
