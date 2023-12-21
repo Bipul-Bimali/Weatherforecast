@@ -30,7 +30,6 @@ public class forecastData {
         return Cloudcover;
     }
     public int getTemp2m() {
-        System.out.println(this.temp2m + "hehe");
         return temp2m;
     }
     public int getLiftedIndex() {
@@ -65,13 +64,11 @@ public class forecastData {
     public void setRh2m(int rh2m) {
         this.rh2m = rh2m;
     }
-//    public void settemp2m(int temp2m){this.temp2m = temp2m;}
     public void setSeeing(int seeing) {
         this.seeing = seeing;
     }
     public void setTemp2m(int temp2m) {
         this.temp2m = temp2m;
-        System.out.println("here  :  "+temp2m+"\nAND : "+this.temp2m);
     }
     public void setTransparency(int transparency) {
         this.transparency = transparency;
@@ -306,7 +303,6 @@ public class forecastData {
         return LIFTED_INDEX;
     }
     public String return_temperature(){
-        System.out.println("temp :  "+TEMPERATURE+"and stemp = "+temp2m);
         return TEMPERATURE;
     }
     public String return_humidity() {
@@ -321,10 +317,4 @@ public class forecastData {
     public String return_prec_type(){
         return PREC_TYPE;
     }
-//    public String[ ] returning(){
-//        Conversion();
-//        String [ ] rame = {CLOUDCOVER,SEEING,transparency+"",liftedIndex+"",temp2m+"",HUMIDITY,windDir,WIND_SPEED,prec};
-//
-//        return rame;
-//    }
 }

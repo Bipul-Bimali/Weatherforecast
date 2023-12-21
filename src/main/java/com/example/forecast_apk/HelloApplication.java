@@ -11,14 +11,13 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 575, 475);
+        Scene scene = new Scene(fxmlLoader.load(), 615, 477);
         stage.setTitle("Weather Forecast");
         stage.setX(0);
         stage.setY(0);
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
     }
